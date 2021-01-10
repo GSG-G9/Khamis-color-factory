@@ -1,9 +1,15 @@
 import React from "react";
 
-const Green = () => {
+const Green = (props) => {
+  const {
+    history: { goBack },
+  } = props;
+
   return (
-    <div>
-      <h1>Green Page</h1>
+    <div className="Green">
+      <h1>THIS IS RED</h1>
+      <h1>ISN'T IT BEAUTIFUL</h1>
+      <h1 onClick={() => goBack()} className="click-back">GO BACK</h1>
     </div>
   );
 };
