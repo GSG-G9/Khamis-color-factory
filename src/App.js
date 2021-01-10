@@ -1,11 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./component/Home";
 import Add from "./component/Add";
 import Red from "./component/Colors/Red";
 import Green from "./component/Colors/Green";
 import Blue from "./component/Colors/Blue";
+
 
 import "./App.css";
 
