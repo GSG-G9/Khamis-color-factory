@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = (props) => {
+  const {colors} = props;
   return (
     <div className="Home">
       <nav className="Home__Nav">
@@ -11,15 +12,13 @@ const Home = () => {
       <main className="Home__Main">
         <p>Please select a color.</p>
         <ul className="Main__link">
-          <li>
-            <Link to="/red" >red</Link>
+        {Object.keys(colors).map((color,index) => (
+          <li key={index}>
+            <Link to={`/${color}`}>
+              {color}
+            </Link>
           </li>
-          <li>
-            <Link to="/green">green</Link>
-          </li>
-          <li>
-            <Link to="/blue">blue</Link>
-          </li>
+        ))}
         </ul>
       </main>
     </div>

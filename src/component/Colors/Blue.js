@@ -7,7 +7,7 @@ const Blue = (props) => {
 
   return (
     <div className="Blue">
-      <h1>THIS IS RED</h1>
+      <h1>THIS IS Blue</h1>
       <h1>ISN'T IT BEAUTIFUL</h1>
       <h1 onClick={() => goBack()} className="click-back">GO BACK</h1>
     </div>
