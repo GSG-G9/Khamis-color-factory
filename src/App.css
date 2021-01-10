@@ -2,3 +2,24 @@
   text-align: center;
 }
 
+.Home__Nav {
+  background-color: #262626;
+  color: #fff;
+  height: 12rem;
+  font-size: 2rem;
+  padding:5px;
+}
+
+.Home__Main{
+  padding-top: 1rem;
+}
+
+.Nav__link{
+  color: #fff;
+  font-weight: bold;
+}
+
+.Main__link{
+  list-style: none;
+  padding-left: .5rem;
+}

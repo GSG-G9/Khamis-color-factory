@@ -1,43 +1,35 @@
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Red from "./Red";
-import Green from "./Green";
-import Blue from "./Blue";
+import Home from "./component/Home";
+import Add from "./component/Add";
+import Red from "./component/Colors/Red";
+import Green from "./component/Colors/Green";
+import Blue from "./component/Colors/Blue";
 
-function App() {
-  return (
-    <Router>
-    <div>
-      <h2>Please select a color.</h2>
-      <ul>
-        <li>
-          <Link to="/red">
-          red
-          </Link>
-          </li>
-          <li>
-          <Link to="/green">
-          green
-          </Link>
-          </li>
-          <li>
-          <Link to="/blue">
-          blue
-          </Link>
-          </li>
-      </ul>
-    </div>
-    <Route exact path='/red' component={Red} />
-    <Route exact path='/green' component={Green} />
-    <Route exact path='/blue' component={Blue} />
-    </Router>
-  );
+import "./App.css";
+
+const NotFound = () => <h1>404</h1>;
+
+class App extends React.Component {
+  state = {};
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/Add" component={Add} />
+            <Route exact path="/red" component={Red} />
+            <Route exact path="/green" component={Green} />
+            <Route exact path="/blue" component={Blue} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
