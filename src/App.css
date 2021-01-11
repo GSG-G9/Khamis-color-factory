@@ -24,24 +24,5 @@
   padding-left: .5rem;
 }
 
-.Red{
-  background-color: red;
-  padding: 1px;
-  height: 100%;
-}
-.Green{
-  background-color: greenyellow;
-  padding: 1px;
-  height: 100%;
-}
-.Blue{
-  background-color: blue;
-  padding: 1px;
-  height: 100%;
-}
 
-.click-back{
-  text-decoration: underline;
-  cursor: pointer;
-}
 

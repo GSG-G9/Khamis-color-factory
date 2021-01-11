@@ -1,23 +1,33 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 import Home from "./component/Home";
 import Add from "./component/Add";
-import Red from "./component/Colors/Red";
-import Green from "./component/Colors/Green";
-import Blue from "./component/Colors/Blue";
+import Colors from "./component/Colors";
 
 import "./App.css";
 
-const NotFound = () => <h1>404</h1>;
-
 class App extends React.Component {
   state = {
-    colors: {
-      red: "#fc0f03",
-      green: "#03fc1c",
-      blue: "#03a9fc",
-    },
+    colors: [
+      {
+        color: "red",
+        hex: "#fc0f03",
+      },
+      {
+        color: "green",
+        hex: "#03fc1c",
+      },
+      {
+        color: "blue",
+        hex: "#03a9fc",
+      },
+    ],
   };
 
   render() {
@@ -27,15 +37,17 @@ class App extends React.Component {
           <Switch>
             <Route
               exact
-              path="/"
+              path="/colors"
               component={() => <Home colors={this.state.colors} />}
             />
-            <Route exact path="/Add" component={Add} />
-            <Route exact path="/red" component={Red} />
-            <Route exact path="/green" component={Green} />
-            <Route exact path="/blue" component={Blue} />
-            <Route component={NotFound} />
-          </Switch>
+            <Route exact path="/colors/Add" component={Add} />
+            <Route
+              exact
+              path="/colors/:color"
+              component={(props) => <Colors colors={this.state.colors} {...props}/>}
+            />
+            <Redirect to="/colors" />
+          </Switch> 
         </div>
       </Router>
     );
